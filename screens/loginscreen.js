@@ -2,19 +2,13 @@ import { StyleSheet, Text ,SafeAreaView} from 'react-native'
 import React, { useState } from 'react'
 import { TextInput, Button } from 'react-native-paper'
 
-const Signupscreen = ({navigation}) => {
-  const [name, setName] = useState("")
+const Loginscreen = ({navigation}) => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   return(
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Sign up for toGo</Text>
-      <TextInput
-        style={styles.input}
-        label="full name"
-        value={name}
-        onChangeText={text => setName(text)}
-      />    
+      <Text style={styles.title}>login toGo</Text>
+  
       <TextInput
         style={styles.input}
         label="email"
@@ -29,7 +23,7 @@ const Signupscreen = ({navigation}) => {
         onChangeText={text => setPassword(text)}
       />
       <Button style={styles.button} mode="contained">
-        Press me
+        login
       </Button>      
       <Button style={styles.button} mode="outlined">
         signup
@@ -59,4 +53,4 @@ const styles = StyleSheet.create({
 })
 
 
-export default Signupscreen
+export default Loginscreen
