@@ -29,7 +29,7 @@ const Loginscreen = ({navigation}) => {
       <Button style={styles.button} mode="contained">
         login
       </Button>      
-      <Button style={styles.button} mode="outlined">
+      <Button style={styles.button} onPress={()=>{navigation.navigate("signup")}} mode="outlined">
         signup
       </Button>
   </SafeAreaView>

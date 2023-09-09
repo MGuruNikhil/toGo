@@ -2,6 +2,8 @@ import { StyleSheet, Text ,SafeAreaView} from 'react-native'
 import React, { useState } from 'react'
 import { TextInput, Button } from 'react-native-paper'
 import { auth } from "../firebase"
+import { createUserWithEmailAndPassword } from 'firebase/auth'
+
 
 const Signupscreen = ({navigation}) => {
   const [name, setName] = useState("")
@@ -20,6 +22,7 @@ const Signupscreen = ({navigation}) => {
         .catch((error)=>{
             const errCode = error.code
             const errMsg = error.message
+            console.log(errCode + "" + errMsg)
             alert("eroor")
         })
   }
@@ -49,7 +52,7 @@ const Signupscreen = ({navigation}) => {
       <Button style={styles.button} mode="contained">
         Press me
       </Button>      
-      <Button style={styles.button} mode="outlined">
+      <Button style={styles.button} onPress={signup} mode="outlined">
         signup
       </Button>
   </SafeAreaView>
