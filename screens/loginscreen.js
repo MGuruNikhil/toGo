@@ -1,10 +1,14 @@
 import { StyleSheet, Text ,SafeAreaView} from 'react-native'
 import React, { useState } from 'react'
 import { TextInput, Button } from 'react-native-paper'
+import { auth } from "../firebase"
 
 const Loginscreen = ({navigation}) => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  function login () {
+    
+  }
   return(
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>login toGo</Text>
