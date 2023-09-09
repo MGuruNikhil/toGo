@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { TextInput, Button } from 'react-native-paper'
 import { auth } from "../firebase"
 import { createUserWithEmailAndPassword } from 'firebase/auth'
+import Home from './components/home'
 
 
 const Signupscreen = ({navigation}) => {
@@ -54,6 +55,9 @@ const Signupscreen = ({navigation}) => {
       </Button>      
       <Button style={styles.button} onPress={signup} mode="outlined">
         signup
+      </Button>
+      <Button style={styles.button} onPress={Home} mode="outlined">
+        Home
       </Button>
   </SafeAreaView>
 )}
