@@ -1,11 +1,26 @@
 import { StyleSheet, Text ,SafeAreaView} from 'react-native'
 import React, { useState } from 'react'
 import { TextInput, Button } from 'react-native-paper'
+import { auth } from "../firebase"
 
 const Signupscreen = ({navigation}) => {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+
+  function signup(){
+    createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential)=>{
+            const user = userCredential.user
+            const userId = user.uid
+        })
+        .catch((error)=>{
+            const errCode = error.code
+            const errMsg = error.message
+            alert("eroor")
+        })
+  }
+    
   return(
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Sign up for toGo</Text>
