@@ -13,6 +13,9 @@ const Signupscreen = ({navigation}) => {
         .then((userCredential)=>{
             const user = userCredential.user
             const userId = user.uid
+            user.updateProfile({
+              displayName: displayName,
+            })
         })
         .catch((error)=>{
             const errCode = error.code
